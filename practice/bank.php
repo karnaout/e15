@@ -18,3 +18,4 @@ $quarters = 34;
 $total = ($pennies * $penny_value) + ($nickels * $nickel_value) + ($dimes * $dime_value) + ($quarters * $quarter_value);
 
 require 'index-view.php';
+?>
