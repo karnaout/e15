@@ -3,7 +3,7 @@
 + Production URL: <http://e15p1.yourdomain.com>
 
 ## Outside resources
-n/a
++ [PHP Array Functions](https://www.w3schools.com/php/php_ref_array.asp)
 
 ## Notes for instructor
 n/a

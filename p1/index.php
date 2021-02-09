@@ -5,12 +5,12 @@
  *
  * @param string $str The string we want to check whether is a palindrome or not.
  * 
- * @return boolean
+ * @return string
  */
 function isPalindrome( $str ) 
 {
-    
-    return '';
+    $str = strtolower($str);
+    return $str == strrev($str) ? 'Yes' : 'No';
 }
 
 /**
@@ -20,9 +20,11 @@ function isPalindrome( $str )
  * 
  * @return int
  */
-function countVowels( $str ) 
+function countVowels( $str )
 {
-    return 0;
+    $vowels = ['a','u','o','i','e'];
+    $str = str_split(strtolower($str));
+    return count(array_intersect($vowels, $str));
 }
 
 require 'index-view.php';
