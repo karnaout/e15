@@ -48,16 +48,5 @@
             </div>
         </div>
     </div>
-
-
-
-
-    
-
-    <div class="results">
-        
-
-    </div>
-    
 </body>
 </html>
