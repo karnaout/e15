@@ -3,15 +3,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E15 Project 1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>E15 Project 1</h1>
-    <hr>
-    <p>is Anna palindrome? <span style="color:red"><?php echo isPalindrome('Anna'); ?></span></p>
-    <p>is Code palindrome? <span style="color:red"><?php echo isPalindrome('Code'); ?></span></p>
-    <hr>
-    <p>How many vowels in Khaled? <span style="color:red">There <?php echo countVowels('Khaled') > 0 ? 'are ' . countVowels('Khaled') : 'is No '; ?> vowel letters in Khaled.</span></p>
-    <p>How many vowels in Rhythm? <span style="color:red">There <?php echo countVowels('Rhythm') > 0 ? 'are ' . countVowels('Rhythm') : 'is No '; ?> vowel letters in Rhythm.</span></p>
+    <div class="content-container">
+        <h1>E15 Project 1</h1>
+        <hr>
+
+        <form method="GET" action='process.php'>
+            <input type="text" name='str'>
+            <button type='submit'>Process string</button>
+        </form> 
+
+        <hr>
+        <div id="results">
+            <h2>Results</h2>
+            <hr>
+
+            <!-- User's input -->
+            <div>
+                <h3>Your String:</h3>
+                <p class="answer"><strong><?= $str; ?></strong></p>
+            </div>
+            <hr>
+            
+            <!-- Is palindrome -->
+            <div>
+                <h3>Is Palindrome?</h3>
+                <p class="answer"><strong><?= $is_Palindrome; ?></strong></p>
+            </div>
+            <hr>
+
+            <!-- Vowel count -->
+            <div>
+                <h3>Vowel Count:</h3>
+                <p class="answer"><strong><?= $count_Vowels; ?></strong></p>
+            </div>
+            <hr>
+
+            <!-- Letter shift -->
+            <div>
+                <h3>Letter Shift:</h3>
+                <p class="answer"><strong><?= $letter_Shift; ?></strong></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+
+    <div class="results">
+        
+
+    </div>
     
 </body>
 </html>

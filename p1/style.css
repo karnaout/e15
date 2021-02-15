@@ -1,0 +1,15 @@
+.content-container {
+    width: 500px;
+    text-align: center;
+    margin: auto;
+}
+
+#results {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 30px;
+}
+
+.answer{
+    color:chocolate;
+}
