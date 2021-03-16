@@ -23,7 +23,7 @@ class BookController extends Controller
         # Load our book data using PHP's file_get_contents
         # We specify our books.json file path using Laravel's database_path helper
         $bookData = file_get_contents(database_path('books.json'));
-    
+
         # Convert the string of JSON text we loaded from books.json into an
         # array using PHP's built-in json_decode function
         $books = json_decode($bookData, true);
@@ -34,6 +34,31 @@ class BookController extends Controller
         });
 
         return view('books/index', ['books' => $books]);
+    }
+
+    /**
+     * GET /search
+     * Search for a book
+     */
+    public function search(Request $request){
+
+        $bookData = file_get_contents(database_path('books.json'));
+        $books = json_decode($bookData, true);
+
+        $searchType = $request->input('searchType', 'title');
+        $searchTerms = $request->input('searchTerms', '');
+
+        $searchResults = [];
+
+        foreach($books as $book){
+            $searchResults[] = $book;
+        }
+
+        return redirect('/')->with([
+            'searchResults' => $searchResults,
+            'searchTerms' => $searchTerms,
+            'searchType' => $searchType
+        ]);
     }
 
     /**
@@ -51,20 +76,10 @@ class BookController extends Controller
         $book = Arr::first($books, function ($value, $key) use ($slug) {
             return $key == $slug;
         });
-        
+
         return view('books/show', [
             'book' => $book,
         ]);
-    }
-
-    /**
-     * GET /search/{category}/{subcategory}
-     */
-    public function search($category, $subcategory)
-    {
-        # TODO: Query the db for books in these categories
-        # TODO: Return a view instead of a string
-        return 'Search in: '.$category.', '.$subcategory;
     }
 
     /**

@@ -11,5 +11,6 @@ Route::get('/support', [PageController::class, 'support']);
 
 Route::get('/books', [BookController::class, 'index']);
 Route::get('/books/{title}', [BookController::class, 'show']);
+Route::get('/search', [BookController::class, 'search']);
 Route::get('/search/{category}/{subcategory}', [BookController::class, 'search']);
 Route::get('/list', [BookController::class, 'list']);
