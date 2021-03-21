@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/objects', function() {
+    return 'view()';
+});
+
+Route::get('/object/{objectName}', function($object){
+    return $object;
+});
