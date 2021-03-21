@@ -1,26 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ObjectController;
+use App\Http\Controllers\PageController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', [PageController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/objects', function() {
-    return 'view()';
-});
-
-Route::get('/object/{objectName}', function($object){
-    return $object;
-});
+Route::get('/objects', [ObjectController::class, 'index']);
+Route::get('/object/{objectName}', [ObjectController::class, 'show']);
