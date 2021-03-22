@@ -11,6 +11,8 @@ class ObjectController extends Controller
     }
 
     public function show( $objectName ){
-        return 'show object' . $objectName;
+        return view('objects/show', [
+            'objectName' => $objectName
+        ]);
     }
 }
