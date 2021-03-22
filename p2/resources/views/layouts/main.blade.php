@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 <head>
     <title>@yield('title')</title>
@@ -20,7 +21,8 @@
             <div class="inner">
                 <h3 class="masthead-brand">RandomObjects</h3>
                 <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/objects">Objects</a>
                 </nav>
             </div>
         </header>
@@ -39,6 +41,7 @@
     <footer>
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="/js/objects/jquery-3.6.0.min.js"><\/script>')</script>
         <script src="/js/objects/bootstrap.min.js"></script>
         <script src="/js/objects/popper.min.js"></script>
     </footer>
