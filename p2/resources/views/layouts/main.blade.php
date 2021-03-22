@@ -18,11 +18,9 @@
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
-                <h3 class="masthead-brand">Cover</h3>
+                <h3 class="masthead-brand">RandomObjects</h3>
                 <nav class="nav nav-masthead justify-content-center">
                 <a class="nav-link active" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Contact</a>
                 </nav>
             </div>
         </header>
@@ -33,7 +31,7 @@
 
         <footer class="mastfoot mt-auto">
             <div class="inner">
-                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                <small>By Khaled Arnaout <a href="http://khaledarnaout.com/">khaledarnaout.com</a> || Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</small>
             </div>
         </footer>
     </div>
