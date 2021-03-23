@@ -7,4 +7,7 @@ use App\Http\Controllers\PageController;
 Route::get('/', [PageController::class, 'index']);
 
 Route::get('/objects', [ObjectController::class, 'index']);
-Route::get('/object/{objectName}', [ObjectController::class, 'show']);
+Route::get('/findObject', [ObjectController::class, 'findObject']);
+Route::get('/object/{objectName?}', [ObjectController::class, 'object']);
+Route::get('/play', [ObjectController::class, 'play']);
+Route::get('/404', [ObjectController::class, 'notFound']);

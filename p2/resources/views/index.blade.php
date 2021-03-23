@@ -9,7 +9,11 @@ Home - RandomObjects
 
 @section('content')
 
-<h1>This is the home home page content</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h1>RandomObjects</h1>
+<p>This is a game for English non-native speakers that can help them to practice describing different objects. This app will show you a random image of an object along with a few clues and your job is to first, identify the name of this object and two, to descibe this object to the best of your ability.</p>
+<p class="lead">
+    <a href="/play" class="btn btn-lg btn-secondary">Play</a>
+    <a href="#" class="btn btn-lg btn-secondary">Add an object</a>
+</p>
 
 @endsection
