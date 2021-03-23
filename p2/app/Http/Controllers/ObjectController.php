@@ -43,7 +43,7 @@ class ObjectController extends Controller
      * Show a perticular object
      *
      */
-    public function object( $slug = '', $object = null, $showInfo = false ){
+    public function object( $slug = '', $object = null, $hideInfo = false ){
 
         $objectData = file_get_contents(database_path('objects.json'));
         $objects = json_decode($objectData, true);
@@ -55,7 +55,8 @@ class ObjectController extends Controller
                 'name' => $object['name'],
                 'description' => $object['description'],
                 'cover_url' => $object['cover_url'],
-                'hints' => $object['hints']
+                'hints' => $object['hints'],
+                'hideInfo' => $hideInfo
             ]);
         } else {
             return view('objects/404');

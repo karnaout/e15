@@ -5,6 +5,7 @@ Play - RandomObjects
 @endsection
 
 @section('head')
+<link rel="stylesheet" href="/css/objects/play.css">
 @endsection
 
 @section('content')
@@ -26,15 +27,15 @@ Play - RandomObjects
     <!-- Search -->
     <fieldset>
         <label for='searchObjects'>
-            Search objects (please enter hyphenated words e.g. hot-dog-roller):
-            <input type='text' name='searchObjects'>
+            Search objects:
+            <input type='text' name='searchObjects' placeholder="e.g. hot-dog-roller">
         </label>
     </fieldset>
 
     <!-- Inculde hints? -->
     <fieldset>
-    <label for="hints"> Show all info</label>
-    <input type="checkbox" id="showInfo" name="showInfo" value="yes">
+    <label for="hideInfo">Hide object desciption and hints</label>
+    <input type="checkbox" id="hideInfo" name="hideInfo" value="false">
     </fieldset>
 
     <input type='submit' class='btn btn-primary' value='Search'>
