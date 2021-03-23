@@ -29,24 +29,33 @@ class ObjectController extends Controller
 
         $searchResults = [];
 
-        foreach( $objects as $object) {
+        foreach( $objects as $slug => $object) {
             if ( in_array($request->input('type'), $object['types'] ) ){
-                $searchResults[] = $object;
+                $searchResults[ $slug ] = $object;
             }
         }
-
+        $resultObject = ! empty( $searchResults ) ? $searchResults[array_rand( $searchResults )] : Null;
         // Return a random item if the search results array is not empty.
-        return ! empty( $searchResults ) ? redirect('/object/' . $searchResults[array_rand( $searchResults )]['id']) : view('objects/404');
+        return ! is_null( $resultObject ) ? redirect('/object/' . $resultObject['id'] ) : view('objects/404');
     }
 
     /**
      * Show a perticular object
      *
      */
-    public function object( $objectName = '' ){
-        if ( $objectName !== '' ) {
+    public function object( $slug = '', $object = null ){
+
+        $objectData = file_get_contents(database_path('objects.json'));
+        $objects = json_decode($objectData, true);
+        $object = $objects[ $slug ] ?? Null;
+
+        if ( ! is_null( $object ) ) {
+
             return view('objects/object', [
-                'objectName' => $objectName
+                'name' => $object['name'],
+                'description' => $object['description'],
+                'cover_url' => $object['cover_url'],
+                'hints' => $object['hints']
             ]);
         } else {
             return view('objects/404');
