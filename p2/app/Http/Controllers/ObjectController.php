@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class ObjectController extends Controller
 {
@@ -11,7 +12,22 @@ class ObjectController extends Controller
      *
      */
     public function index(){
-        return view('objects/index');
+
+        # Load our book data using PHP's file_get_contents
+        # We specify our books.json file path using Laravel's database_path helper
+        $objectData = file_get_contents(database_path('objects.json'));
+
+        # Convert the string of JSON text we loaded from books.json into an
+        # array using PHP's built-in json_decode function
+        $objects = json_decode($objectData, true);
+
+        # Alphabetize the books
+        $objects = Arr::sort($objects, function ($value) {
+            return $value['name'];
+        });
+
+        return view('objects/index', ['objects' => $objects]);
+
     }
 
     /**
