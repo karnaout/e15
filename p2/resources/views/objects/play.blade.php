@@ -26,15 +26,15 @@ Play - RandomObjects
     <!-- Search -->
     <fieldset>
         <label for='searchObjects'>
-            Search objects:
+            Search objects (please enter hyphenated words e.g. hot-dog-roller):
             <input type='text' name='searchObjects'>
         </label>
     </fieldset>
 
     <!-- Inculde hints? -->
     <fieldset>
-    <label for="hints"> Include hints</label>
-    <input type="checkbox" id="hints" name="hitns" value="">
+    <label for="hints"> Show all info</label>
+    <input type="checkbox" id="showInfo" name="showInfo" value="yes">
     </fieldset>
 
     <input type='submit' class='btn btn-primary' value='Search'>

@@ -34,7 +34,7 @@ class ObjectController extends Controller
                 $searchResults[ $slug ] = $object;
             }
         }
-        $resultObject = ! empty( $searchResults ) ? $searchResults[array_rand( $searchResults )] : Null;
+        $resultObject = ! empty( $searchResults ) ? $searchResults[array_rand( $searchResults )] : null;
         // Return a random item if the search results array is not empty.
         return ! is_null( $resultObject ) ? redirect('/object/' . $resultObject['id'] ) : view('objects/404');
     }
@@ -43,11 +43,11 @@ class ObjectController extends Controller
      * Show a perticular object
      *
      */
-    public function object( $slug = '', $object = null ){
+    public function object( $slug = '', $object = null, $showInfo = false ){
 
         $objectData = file_get_contents(database_path('objects.json'));
         $objects = json_decode($objectData, true);
-        $object = $objects[ $slug ] ?? Null;
+        $object = $objects[ $slug ] ?? null;
 
         if ( ! is_null( $object ) ) {
 
