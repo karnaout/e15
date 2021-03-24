@@ -23,6 +23,7 @@
                 <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link  " href="/">Home</a>
                     <a class="nav-link" href="/play">Play</a>
+                    <a class="nav-link" href="/objects/create">New</a>
                     <a class="nav-link" href="/objects">Objects</a>
                 </nav>
             </div>

@@ -71,6 +71,33 @@ class ObjectController extends Controller
     }
 
     /**
+    * GET /objects/create
+    * Display the form to add a new object
+    */
+    public function create(Request $request)
+    {
+        return view('objects/create');
+    }
+
+    /**
+    * POST /objects
+    * Process the form for adding a new object
+    */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required|min:10',
+            'cover_url' => 'url',
+        ]);
+
+
+        # Code will eventually go here to add the book to the database,
+        # but for now we'll just dump the form data to the page for proof of concept
+        dump($request->all());
+    }
+
+    /**
      * Form page
      *
      */
