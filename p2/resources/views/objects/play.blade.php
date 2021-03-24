@@ -28,7 +28,7 @@ Play - RandomObjects
     <fieldset>
         <label for='searchObjects'>
             Search objects:
-            <input type='text' name='searchObjects' placeholder="e.g. hot-dog-roller">
+            <input type='text' name='searchObjects' placeholder="Enter slug e.g. hot-dog-roller">
         </label>
     </fieldset>
 

@@ -31,7 +31,6 @@ class ObjectController extends Controller
     }
 
     /**
-     * GET /objects/{slug}
      * Show an object
      *
      */
@@ -55,7 +54,7 @@ class ObjectController extends Controller
 
         if( null !== $request->input('searchObjects') ){
             // if key exist redirect to the object page otherwise return 404.
-            return isset($objects[$request->input('searchObjects')]) ? redirect('/objects/' . $request->input('searchObjects')) : view('objects/404');
+            return isset($objects[$request->input('searchObjects')]) ? redirect('/objects/' . $request->input('searchObjects'))->with(['hideInfo' => $request->has('hideInfo')]) : view('objects/404');
         }
 
         $searchResults = [];
