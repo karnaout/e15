@@ -21,8 +21,9 @@
             <div class="inner">
                 <h3 class="masthead-brand">RandomObjects</h3>
                 <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/objects">Objects</a>
+                    <a class="nav-link  " href="/">Home</a>
+                    <a class="nav-link" href="/play">Play</a>
+                    <a class="nav-link" href="/objects">Objects</a>
                 </nav>
             </div>
         </header>

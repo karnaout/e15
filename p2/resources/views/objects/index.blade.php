@@ -18,7 +18,7 @@ No books have been added yet
 
 <div id="objects">
     @foreach($objects as $slug => $object)
-     <a class='object' href='/object/{{ $slug }}'>
+     <a class='object' href='/objects/{{ $slug }}'>
         <h3>{{ $object['name'] }}</h3>
     </a>
     @endforeach

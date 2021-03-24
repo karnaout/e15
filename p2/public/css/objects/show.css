@@ -1,0 +1,9 @@
+.card{
+    background-color: #333;
+}
+.hidden-by-default {
+    display: none;
+}
+.show-me:focus ~ .hidden-by-default {
+    display: block;
+  }
