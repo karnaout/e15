@@ -8,22 +8,21 @@ class PageController extends Controller
 {
     /**
      * GET /
+     * Show the application welcome page
      */
     public function index()
     {
+        # If we land on this page after doing a search, we'll have the following data available
         $searchResults = session('searchResults', null);
-        $searchTerms = session('searchTerms', null);
-        $searchType = session('searchType', null);
 
         return view('pages/welcome', [
             'searchResults' => $searchResults,
-            'searchTerms' => $searchTerms,
-            'searchType' => $searchType
         ]);
     }
 
     /**
      * GET /support
+     * Show the support page
      */
     public function support()
     {

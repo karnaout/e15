@@ -197,6 +197,15 @@ button {
     text-align: left;
 }
 
+.alert {
+    margin-top: 20px;
+}
+
+ul.alert {
+    list-style-type: none;
+}
+
+
 
 /*----------------------------------------------------
 Misc
