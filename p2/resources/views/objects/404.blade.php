@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
 @section('title')
-Play - RandomObjects
+404 error - RandomObjects
 @endsection
 
 @section('head')
