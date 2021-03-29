@@ -13,6 +13,10 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
     <link rel="stylesheet" href="/css/styles.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     @yield('head')
 </head>
 <body>
@@ -21,7 +25,28 @@
             <div class="inner">
                 <h3 class="masthead-brand">FlashCards</h3>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link " href="/">Home</a>
+                    <a class="nav-link" href="/">Home</a>
+                    {{-- Decks --}}
+                    <div class="dropdown">
+                        <button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            Decks
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">View deck</a>
+                            <a class="dropdown-item" href="#">Create a deck</a>
+                        </div>
+                    </div>
+                    {{-- Cards --}}
+                    <div class="dropdown">
+                        <button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            Cards
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">View cards</a>
+                            <a class="dropdown-item" href="#">Create a card</a>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#">Study</a>
                 </nav>
             </div>
         </header>
