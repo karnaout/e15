@@ -32,7 +32,7 @@
                             Decks
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">View deck</a>
+                            <a class="dropdown-item" href="/decks">View deck</a>
                             <a class="dropdown-item" href="#">Create a deck</a>
                         </div>
                     </div>
@@ -42,11 +42,11 @@
                             Cards
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">View cards</a>
+                            <a class="dropdown-item" href="/cards">View cards</a>
                             <a class="dropdown-item" href="#">Create a card</a>
                         </div>
                     </div>
-                    <a class="nav-link" href="#">Study</a>
+                    <a class="nav-link" href="study">Study</a>
                 </nav>
             </div>
         </header>

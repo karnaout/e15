@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
 @section('title')
-Home - FlashCards
+404 - RandomObjects
 @endsection
 
 @section('head')
@@ -9,10 +9,8 @@ Home - FlashCards
 
 @section('content')
 
-<h1>FlashCards</h1>
-<p class="lead">
-Welcome to FlashCards! You can learn more about Flashcards and why and how they work by visiting the <a target="_blank" href="https://en.wikipedia.org/wiki/Flashcard">Wikipedia Flashcard page</a>.
-</p>
+<h1>404 PAGE NOT FOUND</h1>
+<p>Please check that you typed the address correctly. You can also use one of the links below to navigate to their respective pages.</p>
 <p class="lead">
     <a href="/decks" class="btn btn-lg btn-secondary">View Decks</a>
     <a href="/cards" class="btn btn-lg btn-secondary">View Cards</a>

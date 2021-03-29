@@ -8,6 +8,7 @@ use App\Http\Controllers\StudyController;
 
 // Pages
 Route::get('/', [PageController::class, 'index']);
+Route::get('/404', [PageController::class, 'notFound']);
 
 // Decks
 Route::get('/decks', [DeckController::class, 'index']);

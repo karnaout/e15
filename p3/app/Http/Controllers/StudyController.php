@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class StudyController extends Controller
 {
-    public function index(){
-        return 'Study!';
+    public function index() {
+        return view('/study/index');
     }
 }
