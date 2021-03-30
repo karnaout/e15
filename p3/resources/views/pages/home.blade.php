@@ -16,7 +16,7 @@ Welcome to FlashCards! You can learn more about Flashcards and why and how they 
 <p class="lead">
     <a href="/decks" class="btn btn-lg btn-secondary">View Decks</a>
     <a href="/cards" class="btn btn-lg btn-secondary">View Cards</a>
-    <a href="/" class="btn btn-lg btn-secondary">Study</a>
+    <a href="/study" class="btn btn-lg btn-secondary">Study</a>
 </p>
 
 @endsection
