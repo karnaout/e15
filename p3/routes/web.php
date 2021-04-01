@@ -21,6 +21,13 @@ Route::get('/cards/create', [CardController::class, 'create']);
 // Study
 Route::get('/study', [StudyController::class, 'index']);
 
+// Memorize Card
+Route::get('/memorize-cards', [StudyController::class, 'index']);
+
+// Trivia
+Route::get('/trivia', [StudyController::class, 'index']);
+
+
 
 Route::get('/debug', function () {
 
