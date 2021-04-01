@@ -1,0 +1,29 @@
+{
+    "id-1": {
+        "question": "A word refers to the popular practice of withdrawing support for (canceling) public figures and companies after they have done or said something considered objectionable or offensive. * is generally discussed as being performed on social media in the form of group shaming.",
+        "answer": "cancel culture",
+        "cover_url": "https://api.time.com/wp-content/uploads/2019/11/cancel-culture-is-not-real.jpg",
+        "categories": [
+            "Category A",
+            "Category B"
+        ]
+    },
+    "id-2": {
+        "question": "is a slang insult for men who are seen as too attentive and submissive to women, especially out of a failed hope of winning some entitled sexual attention or activity from them.",
+        "answer": "Simp",
+        "cover_url": "https://studybreaks.com/wp-content/uploads/2020/10/SimpCulture.jpg",
+        "categories": [
+            "Category A",
+            "Category B"
+        ]
+    },
+    "id-3": {
+        "question": "An * is someone that aligns with and supports a cause with another individual or group of people. A straight ally, more specifically, is an individual outside of the LGBTQ community that supports their fight for equality and rights.",
+        "answer": "Ally",
+        "cover_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ally-1x1-1561664195.png",
+        "categories": [
+            "Category A",
+            "Category B"
+        ]
+    }
+}

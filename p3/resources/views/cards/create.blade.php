@@ -28,6 +28,11 @@ New card - FlashCards
     </fieldset>
 
     <fieldset>
+        <label for='cover_url'>Cover URL</label>
+        <input type='text' name='cover_url' id='cover_url' value='{{ old("cover_url") }}'>
+    </fieldset>
+
+    <fieldset>
         <label for="type">Category:</label>
             <select name="type" id="type">
                 @if ( old('type') == 'a' )
