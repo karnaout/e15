@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use App\Models\Deck; # Make our Deck Model accessible
 
 class DeckController extends Controller
 {
