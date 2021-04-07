@@ -31,6 +31,8 @@
 
     <footer>
         &copy; Bookmark, Inc.
+
+        {{ config('mail.supportEmail') }}
     </footer>
 
 </body>

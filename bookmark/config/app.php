@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => 'Bookmark',
 
     /*
     |--------------------------------------------------------------------------
@@ -59,7 +59,7 @@ return [
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
-    |--------------------------------------------------------------------------
+    |------------ --------------------------------------------------------------
     |
     | Here you may specify the default timezone for your application, which
     | will be used by the PHP date and date-time functions. We have gone
