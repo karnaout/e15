@@ -23,12 +23,36 @@ class DeckController extends Controller
         //     return $value['name'];
         // });
 
-        $decks = Deck::orderBy('name', 'ASC')->get();
+        $decks = Deck::orderBy('updated_at', 'desc')->get();
 
         return view('decks/index', ['decks' => $decks]);
     }
 
     public function create() {
         return view('decks/create');
+    }
+
+    /**
+     * POST /decks
+     * Process the form for adding a new deck
+     */
+    public function store(Request $request) {
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'max:1000'
+        ]);
+
+        $deck = new Deck();
+        $deck->name = $request->name;
+        $deck->description = $request->description;
+
+        // Generate the slug. convert the name string to a slug string and append a random number to it.
+        $deck->slug = strtolower(trim(preg_replace('/[\s-]+/', '_', preg_replace('/[^A-Za-z0-9-]+/', '_', preg_replace('/[&]/', 'and', preg_replace('/[\']/', '', iconv('UTF-8', 'ASCII//TRANSLIT', $request->name))))), '_')) . rand(0, 99999);
+
+        // Save deck.
+        $deck->save();
+
+        return redirect('/decks');
     }
 }

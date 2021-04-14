@@ -12,10 +12,12 @@ Route::get('/404', [PageController::class, 'notFound']);
 
 // Decks
 Route::get('/decks', [DeckController::class, 'index']);
+Route::post('/decks', [DeckController::class, 'store']);
 Route::get('/decks/create', [DeckController::class, 'create']);
 
 // Cards
 Route::get('/cards', [CardController::class, 'index']);
+Route::post('/cards', [CardController::class, 'store']);
 Route::get('/cards/create', [CardController::class, 'create']);
 
 // Study
