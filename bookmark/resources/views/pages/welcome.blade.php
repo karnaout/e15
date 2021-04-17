@@ -5,6 +5,13 @@
 @endsection
 
 @section('content')
+
+@if(Auth::user())
+<h2>
+    Hello {{ Auth::user()->name }}!
+</h2>
+@endif
+
 <p>
     Welcome to Bookmark&mdash; an online book journal that lets you track and share a history of books you’ve read.
 </p>
@@ -25,7 +32,7 @@
             Search type:
         </label>
 
-        <input type='radio' name='searchType' id='title' value='title' {{ (old('searchType') == 'title') ? 'checked' : '' }}>
+        <input type='radio' name='searchType' id='title' value='title' {{ (old('searchType', 'title') == 'title' ) ? 'checked' : '' }}>
         <label for='title'> Title</label>
 
         <input type='radio' name='searchType' id='author' value='author' {{ (old('searchType') == 'author') ? 'checked' : '' }}>
@@ -57,7 +64,7 @@
     {{ count($searchResults) }}
     {{ Str::plural('Result', count($searchResults)) }}:
 
-    <ul>
+    <ul class='clean-list'>
         @foreach($searchResults as $slug => $book)
         <li><a href='/books/{{ $slug }}'> {{ $book['title'] }}</a></li>
         @endforeach
