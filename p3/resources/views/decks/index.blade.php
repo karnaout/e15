@@ -29,7 +29,7 @@ No decks have been added yet
                 </p>
             @endif --}}
 
-            <a href="#" class="btn btn-primary">Edit deck</a>
+            <a href="/decks/{{ $deck->slug }}" class="btn btn-primary">Edit deck</a>
         </div>
     </div>
 @endforeach

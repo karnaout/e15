@@ -5,6 +5,7 @@ Cards - FlashCards
 @endsection
 
 @section('head')
+<link rel="stylesheet" href="/css/cards.css">
 @endsection
 
 @section('content')
@@ -31,7 +32,7 @@ No cards have been added yet
                 </p>
             @endif --}}
 
-            <a href="#" class="btn btn-primary">Edit card</a>
+            <a href="/cards/{{ $card->slug }}" class="btn btn-primary">Edit card</a>
         </div>
     </div>
 @endforeach

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
     use HasFactory;
+
+    public static function find($slug)
+    {
+        return self::where('slug', '=', $slug)->first();
+    }
 }

@@ -48,18 +48,19 @@ class CardController extends Controller
 
 
     /**
-     * POST /decks
-     * Process the form for adding a new deck
+     * GET /cards/{slug}
+     * Show card page
      */
-    // public function store(Request $request) {
+    public function show($slug)
+    {
+        $card = Card::find($slug);
 
-    //     $request->validate([
-    //         'question' => 'required',
-    //         'answer' => 'required',
-    //         'cover_url' => 'url',
-    //     ])
+        if (!$card) {
+            return redirect('/404')->with(['missing-item-message' => 'Card not found']);
+        }
 
-
-    //     dump($request->all());
-    // }
+        return view('cards/show', [
+            'card' => $card,
+        ]);
+    }
 }
