@@ -25,6 +25,7 @@ This is a traditional flashcards application where users might use it to study c
 + [Bootstrap Cover template](https://getbootstrap.com/docs/4.0/examples/)
 + [PHP to convert string to slug](https://stackoverflow.com/questions/40641973/php-to-convert-string-to-slug)
 + [Generate random number in Laravel](https://stackoverflow.com/questions/24884174/generate-random-number-in-laravel/24884343#:~:text=You%20can%20use%20the%20rand,the%20rand()%20with%20it.)
++ [Laravel redirect issue from blade template](https://stackoverflow.com/questions/43118075/laravel-redirect-issue-from-blade-template)
 
 ## Notes for instructor
 

@@ -55,4 +55,21 @@ class DeckController extends Controller
 
         return redirect('/decks');
     }
+
+    /**
+     * GET /decks/{slug}
+     * Show deck page
+     */
+    public function show($slug)
+    {
+        $deck = Deck::find($slug);
+
+        if (!$deck) {
+            return redirect('/404')->with(['missing-item-message' => 'Deck not found']);
+        }
+
+        return view('decks/show', [
+            'deck' => $deck,
+        ]);
+    }
 }
