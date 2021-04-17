@@ -206,9 +206,8 @@ ul.alert {
 }
 
 
-
 /*----------------------------------------------------
-Misc
+MISC
 -----------------------------------------------------*/
 .flash-alert {
     background-color: yellow;
@@ -219,4 +218,15 @@ Misc
     padding: 5px;
     font-weight: bold;
     text-align: center;
+}
+
+.clean-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.clean-list li {
+    padding: 0;
+    margin: 0;
 }
