@@ -23,9 +23,8 @@
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
-                <h3 class="masthead-brand">FlashCards</h3>
+                <a href="/" class="masthead-brand">🅵🅻🅰🆂🅷🅲🅰🆁🅳🆂</a>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link" href="/">Home</a>
                     {{-- Decks --}}
                     <div class="dropdown">
                         <button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown">

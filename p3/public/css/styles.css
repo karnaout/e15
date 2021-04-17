@@ -56,6 +56,9 @@ body {
 
 .masthead-brand {
   margin-bottom: 0;
+  font-size: 1.7rem;
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .nav-masthead .nav-link {
