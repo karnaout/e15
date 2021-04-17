@@ -23,7 +23,7 @@
 </p>
 
 <p class="lead">
-    <a href="/decks/edit" class="btn btn-lg btn-secondary">Edit Deck</a>
+    <a href="/decks/{{ $deck->slug}}/edit" class="btn btn-lg btn-secondary">Edit Deck</a>
     <a href="/study" class="btn btn-lg btn-secondary">Study Deck</a>
     <a href="/decks" class="btn btn-lg btn-secondary">Other Decks</a>
 </p>

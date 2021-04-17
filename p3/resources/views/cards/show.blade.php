@@ -29,7 +29,7 @@
 </p>
 
 <p class="lead">
-    <a href="/cards/edit" class="btn btn-lg btn-secondary">Edit Card</a>
+    <a href="/cards/{{ $card->slug }}/edit" class="btn btn-lg btn-secondary">Edit Card</a>
     <a href="/study" class="btn btn-lg btn-secondary">Study</a>
     <a href="/cards" class="btn btn-lg btn-secondary">Other Cards</a>
 </p>

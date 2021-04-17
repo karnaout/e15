@@ -63,4 +63,18 @@ class CardController extends Controller
             'card' => $card,
         ]);
     }
+
+    /**
+     * GET /cards/{slug}/edit
+     */
+    public function edit(Request $request, $slug)
+    {
+        $card = Card::find($slug);
+
+        if (!$card){
+            return redirect('/404')->with(['missing-item-message' => 'Card not found']);
+        }
+
+        return view('cards/edit', ['card' => $card]);
+    }
 }

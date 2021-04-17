@@ -72,4 +72,18 @@ class DeckController extends Controller
             'deck' => $deck,
         ]);
     }
+
+    /**
+     * GET /decks/{slug}/edit
+     */
+    public function edit(Request $request, $slug)
+    {
+        $deck = Deck::find($slug);
+
+        if (!$deck){
+            return redirect('/404')->with(['missing-item-message' => 'Deck not found']);
+        }
+
+        return view('decks/edit', ['deck' => $deck]);
+    }
 }
