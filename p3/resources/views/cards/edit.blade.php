@@ -20,17 +20,17 @@ Edit card {{ $card->question }} - FlashCards
 
     <fieldset>
         <label for='question'>Question [Required]</label>
-        <input type='text' name='question' id='question' value="{{ $card->question }}">
+        <input type='text' name='question' id='question' value="{{ old('question', $card->question) }}">
     </fieldset>
 
     <fieldset>
         <label for='answer'>Answer [Required]</label>
-        <input type='text' name='answer' id='answer' value="{{ $card->answer }}">
+        <input type='text' name='answer' id='answer' value="{{ old('answer', $card->answer) }}">
     </fieldset>
 
     <fieldset>
         <label for='cover_url'>Cover URL</label>
-        <input type='text' name='cover_url' id='cover_url' value='{{ $card->cover_url }}'>
+        <input type='text' name='cover_url' id='cover_url' value='{{ old('cover_url', $card->cover_url) }}'>
     </fieldset>
 
     <fieldset>

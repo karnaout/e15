@@ -15,16 +15,16 @@ Edit deck {{ $deck->name }} - FlashCards
 <hr>
 <form method='POST' action='/decks'>
     {{ csrf_field() }}
-    {{ method_field('put') }}
+    {{ method_field('PUT') }}
 
     <fieldset>
         <label for='name'>Deck name [Required]</label>
-        <input type='text' name='name' id='name' value="{{ $deck->name }}">
+        <input type='text' name='name' id='name' value="{{ old('name', $deck->name) }}">
     </fieldset>
 
     <fieldset>
         <label for='description'>Description</label>
-        <textarea name='description'>{{ $deck->description }}</textarea>
+        <textarea name='description'>{{ old('description', $deck->description) }}</textarea>
     </fieldset>
 
     <fieldset>

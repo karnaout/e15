@@ -86,4 +86,25 @@ class DeckController extends Controller
 
         return view('decks/edit', ['deck' => $deck]);
     }
+
+    /**
+     * PUT /decks
+     */
+    public function update(Request $request, $slug)
+    {
+        $deck = Deck::find($slug);
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'max:1000'
+        ]);
+
+        $deck->name = $request->name;
+        $book->description = $request->description;
+
+        // Update deck
+        $book->save();
+
+        return redirect('/decks/'.$deck->slug.'/edit')->with(['flash-alert' => 'Your changes were saved.']);
+    }
 }
