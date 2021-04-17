@@ -77,4 +77,27 @@ class CardController extends Controller
 
         return view('cards/edit', ['card' => $card]);
     }
+
+    /**
+     * PUT /cards
+     */
+    public function update(Request $request, $slug)
+    {
+        $card = Card::find($slug);
+
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required',
+            'cover_url' => 'url',
+        ]);
+
+        $card->question = $request->question;
+        $card->answer = $request->answer;
+        $card->cover_url = $request->cover_url;
+
+        // Update card
+        $card->save();
+
+        return redirect('/cards/'.$card->slug);
+    }
 }

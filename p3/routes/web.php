@@ -15,6 +15,8 @@ Route::get('/decks', [DeckController::class, 'index']);
 Route::get('/decks/create', [DeckController::class, 'create']);
 Route::post('/decks', [DeckController::class, 'store']);
 Route::get('/decks/{slug}', [DeckController::class, 'show']);
+
+// Decks - Update
 Route::get('/decks/{slug}/edit', [DeckController::class, 'edit']);
 Route::put('/decks/{slug}', [DeckController::class, 'update']);
 

@@ -13,7 +13,7 @@ Edit deck {{ $deck->name }} - FlashCards
 <h1>Edit deck - {{ $deck->name }}</h1>
 
 <hr>
-<form method='POST' action='/decks'>
+<form method='POST' action='/decks/{{ $deck->slug }}'>
     {{ csrf_field() }}
     {{ method_field('PUT') }}
 

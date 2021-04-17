@@ -14,9 +14,9 @@ Edit card {{ $card->question }} - FlashCards
 <h3>{{ $card->slug }}</h3>
 
 <hr>
-<form method='POST' action='/cards'>
+<form method='POST' action='/cards/{{ $card->slug }}'>
     {{ csrf_field() }}
-    {{ method_field('put') }}
+    {{ method_field('PUT') }}
 
     <fieldset>
         <label for='question'>Question [Required]</label>

@@ -10,19 +10,6 @@ class DeckController extends Controller
 {
     public function index() {
 
-        # Load our book data using PHP's file_get_contents
-        # We specify our books.json file path using Laravel's database_path helper
-        // $decksData = file_get_contents(database_path('decks.json'));
-
-        # Convert the string of JSON text we loaded from books.json into an
-        # array using PHP's built-in json_decode function
-        // $decks = json_decode($decksData, true);
-
-        # Alphabetize the books
-        // $decks = Arr::sort($decks, function ($value) {
-        //     return $value['name'];
-        // });
-
         $decks = Deck::orderBy('updated_at', 'desc')->get();
 
         return view('decks/index', ['decks' => $decks]);
@@ -100,11 +87,11 @@ class DeckController extends Controller
         ]);
 
         $deck->name = $request->name;
-        $book->description = $request->description;
+        $deck->description = $request->description;
 
         // Update deck
-        $book->save();
+        $deck->save();
 
-        return redirect('/decks/'.$deck->slug.'/edit')->with(['flash-alert' => 'Your changes were saved.']);
+        return redirect('/decks/'.$deck->slug);
     }
 }
