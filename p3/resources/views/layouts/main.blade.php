@@ -46,6 +46,14 @@
                         </div>
                     </div>
                     <a class="nav-link" href="/study">Study</a>
+                    @if(!Auth::user())
+                        <a href='/login' class="nav-link">Login</a>
+                    @else
+                        <form method='POST' id='logout' action='/logout'>
+                            {{ csrf_field() }}
+                            <a href='#' onClick='document.getElementById("logout").submit();' class="nav-link">Logout</a>
+                        </form>
+                    @endif
                 </nav>
             </div>
         </header>
