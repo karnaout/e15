@@ -8,7 +8,7 @@ use App\Http\Controllers\StudyController;
 
 /******  Pages ********/
 Route::get('/', [PageController::class, 'index']);
-Route::get('/profile', [PageController::class, 'profile']);
+Route::get('/profile', [PageController::class, 'profile'])->middleware('auth');
 Route::get('/404', [PageController::class, 'notFound']);
 
 /******  Decks ********/

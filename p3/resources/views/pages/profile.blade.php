@@ -9,12 +9,6 @@
 @endsection
 
 @section('content')
-@if( ! Auth::user() )
-    @php
-        header("Location: " . URL::to('/login'), true, 302);
-        exit();
-    @endphp
-@endif
 
 <div class="wrapper">
     <h1>{{ Auth::user()->name }}</h1>
