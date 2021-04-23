@@ -2,11 +2,6 @@ main {
     margin-top: 2em;
 }
 
-/* Form */
-label{
-    min-width: 15em;
-}
-
 /* Card page */
 .cover {
     padding: 0 0;

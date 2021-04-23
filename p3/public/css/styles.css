@@ -115,6 +115,15 @@ button.nav-link {
   font-weight: 700;
 }
 
+/*
+ * Common components
+ */
+ /* Form */
+label{
+    min-width: 17em;
+}
+
+
 
 /*
  * Footer

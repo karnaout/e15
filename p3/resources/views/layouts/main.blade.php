@@ -47,12 +47,20 @@
                     </div>
                     <a class="nav-link" href="/study">Study</a>
                     @if(!Auth::user())
-                        <a href='/login' class="nav-link">Login</a>
+                        <a href='/login' class="nav-link">Login / Register</a>
                     @else
-                        <form method='POST' id='logout' action='/logout'>
-                            {{ csrf_field() }}
-                            <a href='#' onClick='document.getElementById("logout").submit();' class="nav-link">Logout</a>
-                        </form>
+                        <div class="dropdown">
+                            <button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                {{ Auth::user()->name }}
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/profile">Profile</a>
+                                <form method='POST' id='logout' action='/logout'>
+                                    {{ csrf_field() }}
+                                    <a href='#' onClick='document.getElementById("logout").submit();' class="dropdown-item">Logout</a>
+                                </form>
+                            </div>
+                        </div>
                     @endif
                 </nav>
             </div>

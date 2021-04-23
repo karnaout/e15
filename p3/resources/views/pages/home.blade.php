@@ -5,18 +5,20 @@ Home - FlashCards
 @endsection
 
 @section('head')
+<link rel="stylesheet" href="/css/pages/home.css">
 @endsection
 
 @section('content')
-
-<h1>FlashCards</h1>
-
 @if(Auth::user())
-<h2>
-    Hello {{ Auth::user()->name }}!
-</h2>
+<div class="user-dashboard">
+    <h3>
+        Welcome back {{ Auth::user()->name }}!
+    </h3>
+</div>
 @endif
 
+
+<h1>FlashCards</h1>
 <p class="lead">
 Welcome to FlashCards! You can learn more about Flashcards and why and how they work by visiting the <a target="_blank" href="https://en.wikipedia.org/wiki/Flashcard">Wikipedia Flashcard page</a>.
 </p>

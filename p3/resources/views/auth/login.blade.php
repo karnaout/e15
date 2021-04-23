@@ -13,6 +13,8 @@ Log in - FlashCards
 
     Don’t have an account? <a href='/register'>Register here...</a>
 
+    <hr>
+
     <form method='POST' action='/login'>
 
         {{ csrf_field() }}
@@ -26,6 +28,8 @@ Log in - FlashCards
         <label>
             <input type='checkbox' name='remember' {{ old('remember') ? 'checked' : '' }}> Remember Me
         </label>
+
+        <br>
 
         <button type='submit' class='btn btn-primary'>Login</button>
 

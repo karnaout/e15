@@ -12,6 +12,8 @@ Register - FlashCards
 
 Already have an account? <a href='/login'>Login here...</a>
 
+<hr>
+
 <form method='POST' action='/register'>
     {{ csrf_field() }}
 
@@ -26,6 +28,8 @@ Already have an account? <a href='/login'>Login here...</a>
 
     <label for='password-confirm'>Confirm Password</label>
     <input id='password-confirm' type='password' name='password_confirmation'>
+
+    <br>
 
     <button type='submit' class='btn btn-primary'>Register</button>
 </form>
