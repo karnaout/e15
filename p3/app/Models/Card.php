@@ -18,4 +18,9 @@ class Card extends Model
     {
         return $this->belongsToMany('App\Models\Deck')->withTimestamps();
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category')->withTimestamps();
+    }
 }

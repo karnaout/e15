@@ -9,4 +9,9 @@ class Category extends Model
 {
     use HasFactory;
 
+    public function cards()
+    {
+        return $this->belongsToMany('App\Models\Card')->withTimestamps();
+    }
+
 }

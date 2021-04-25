@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(CardDeckTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
+        $this->call(CardCategoryTableSeeder::class);
     }
 }
