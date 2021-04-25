@@ -13,4 +13,9 @@ class Card extends Model
     {
         return self::where('slug', '=', $slug)->first();
     }
+
+    public function decks()
+    {
+        return $this->belongsToMany('App\Models\Deck')->withTimestamps();
+    }
 }
