@@ -114,15 +114,6 @@ class BookController extends Controller
     }
 
     /**
-     * GET /list
-     */
-    public function list()
-    {
-        # TODO
-        return view('books/list');
-    }
-
-    /**
      * GET /books/{slug}/edit
      */
     public function edit(Request $request, $slug)
@@ -191,6 +182,9 @@ class BookController extends Controller
     public function destroy($slug)
     {
         $book = Book::findBySlug($slug);
+
+        $book->users()->detach();
+
         $book->delete();
 
         return redirect('/books')->with([
