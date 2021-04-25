@@ -27,29 +27,6 @@ New deck - FlashCards
         <textarea name='description'>{{{ old('description') }}}</textarea>
     </fieldset>
 
-    <fieldset>
-        <label for="type">Category:</label>
-            <select name="type" id="type">
-                @if ( old('type') == 'a' )
-                    <option value="a" selected>Category A</option>
-                @else
-                    <option value="a">Category A</option>
-                @endif
-
-                @if ( old('type') == 'b' )
-                    <option value="b" selected>Category B</option>
-                @else
-                    <option value="b">Category B</option>
-                @endif
-
-                @if ( old('type') == 'c' )
-                    <option value="c" selected>Category C</option>
-                @else
-                    <option value="c">Category C</option>
-                @endif
-        </select>
-    </fieldset>
-
     <input type='submit' class='btn btn-primary' value='Submit'>
 </form>
 
