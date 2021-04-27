@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 use App\Models\Deck; # Make our Deck Model accessible
 
 class DecksTableSeeder extends Seeder
@@ -13,20 +14,30 @@ class DecksTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->addDeck();
+        $this->decksFromJson();
     }
 
     /**
      * Add a deck
      */
-    private function addDeck()
+    private function decksFromJson()
     {
-        $deck = new Deck();
-        $deck->slug = 'bedroom-items';
-        $deck->name = 'Bedroom Items';
-        $deck->description = 'A collection of items you might find in a bedroom';
+        $deckData = file_get_contents(database_path('decks.json'));
+        $decks = json_decode($deckData, true);
 
-        $deck->save();
+        $count = count($decks);
+        foreach ($decks as $slug => $deckData) {
+            $deck = new Deck();
+
+            $deck->created_at = Carbon::now();
+            $deck->updated_at = Carbon::now();
+            $deck->slug = $slug;
+            $deck->name = $deckData['name'];
+            $deck->description = $deckData['description'];
+
+            $deck->save();
+            $count--;
+        }
     }
 
 }

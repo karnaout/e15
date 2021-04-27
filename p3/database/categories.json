@@ -1,0 +1,14 @@
+{
+    "objects": {
+        "title": "Objects",
+        "description": "English names for objects and items you can find in your day to day life."
+    },
+    "names": {
+        "title": "Names",
+        "description": "Names that might be harder to pronounce and remember."
+    },
+    "vocabulary": {
+        "title": "Vocabulary",
+        "description": "Words, phrases and expressions."
+    }
+}

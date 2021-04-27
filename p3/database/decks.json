@@ -1,25 +1,14 @@
 {
     "cities": {
         "name": "Cities",
-        "description": "Names of popular cities in the US.",
-        "categories": [
-            "Category A",
-            "Category B"
-        ]
+        "description": "Names of popular cities in the US."
     },
     "names": {
         "name": "names",
-        "description": "Common names in the US.",
-        "categories": [
-            "Category C"
-        ]
+        "description": "Common names in the US."
     },
     "objects": {
         "name": "Objects",
-        "description": "Names of common objects used in day to day life in the US",
-        "categories": [
-            "Category B",
-            "Category C"
-        ]
+        "description": "Names of common objects used in day to day life in the US"
     }
 }
