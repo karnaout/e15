@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use App\Models\Book;
 use App\Models\Author;
+use App\Actions\Book\StoreNewBook;
 
 class BookController extends Controller
 {
@@ -39,18 +40,9 @@ class BookController extends Controller
         ]
         );
 
-        $book = new Book();
-        $book->title = $request->title;
-        $book->slug = $request->slug;
-        $book->author_id = $request->author_id;
-        $book->published_year = $request->published_year;
-        $book->cover_url = $request->cover_url;
-        $book->info_url = $request->info_url;
-        $book->purchase_url = $request->purchase_url;
-        $book->description = $request->description;
-        $book->save();
+        $action = new StoreNewBook((object) $request->all());
         
-        return redirect('/books/create')->with(['flash-alert' => 'The book “'.$book->title.'” was added.']);
+        return redirect('/books/create')->with(['flash-alert' => 'The book “'.$action->results->title.'” was added.']);
     }
 
     /**
@@ -100,16 +92,19 @@ class BookController extends Controller
      * GET /books/{slug}
      * Show the details for an individual book
      */
-    public function show($slug)
+    public function show(Request $request, $slug)
     {
         $book = Book::findBySlug($slug);
 
         if (!$book) {
             return redirect('/books')->with(['flash-alert' => 'Book not found.']);
         }
-    
+
+        $onList = $book->users()->where('user_id', $request->user()->id)->count() >= 1;
+
         return view('books/show', [
             'book' => $book,
+            'onList' => $onList
         ]);
     }
 
@@ -124,7 +119,9 @@ class BookController extends Controller
             return redirect('/books')->with(['flash-alert' => 'Book not found.']);
         }
 
-        return view('books/edit', ['book' => $book]);
+        $authors = Author::orderBy('last_name')->select(['id', 'first_name', 'last_name'])->get();
+
+        return view('books/edit', ['book' => $book, 'authors' => $authors]);
     }
 
     /**
@@ -137,7 +134,7 @@ class BookController extends Controller
         $request->validate([
             'title' => 'required',
             'slug' => 'required|unique:books,slug,'.$book->id.'|alpha_dash',
-            'author' => 'required',
+            'author_id' => 'required',
             'published_year' => 'required|digits:4',
             'cover_url' => 'url',
             'info_url' => 'url',
@@ -147,7 +144,7 @@ class BookController extends Controller
 
         $book->title = $request->title;
         $book->slug = $request->slug;
-        $book->author = $request->author;
+        $book->author_id = $request->author_id;
         $book->published_year = $request->published_year;
         $book->cover_url = $request->cover_url;
         $book->info_url = $request->info_url;
@@ -155,7 +152,7 @@ class BookController extends Controller
         $book->description = $request->description;
         $book->save();
 
-        return redirect('/books/'.$slug.'/edit')->with(['flash-alert' => 'Your changes were saved.']);
+        return redirect('/books/'.$slug.'/edit')->with(['flash-alert' => 'Your updates were saved.']);
     }
 
     /**
