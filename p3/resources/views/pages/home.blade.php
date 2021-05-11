@@ -11,7 +11,7 @@ Home - FlashCards
 @section('content')
 @if(Auth::user())
 <div class="user-dashboard">
-    <h3>
+    <h3 dusk="welcome-heading">
         Welcome back {{ Auth::user()->name }}!
     </h3>
 </div>
@@ -19,7 +19,7 @@ Home - FlashCards
 
 
 <h1>FlashCards</h1>
-<p class="lead">
+<p dusk='welcome-paragraph' class="lead">
 Welcome to FlashCards! You can learn more about Flashcards and why and how they work by visiting the <a target="_blank" href="https://en.wikipedia.org/wiki/Flashcard">Wikipedia Flashcard page</a>.
 </p>
 <p class="lead">

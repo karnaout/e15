@@ -8,7 +8,7 @@ Register - FlashCards
 @endsection
 
 @section('content')
-<h1>Register</h1>
+<h1 dusk='register-heading'>Register</h1>
 
 Already have an account? <a href='/login'>Login here...</a>
 
@@ -18,19 +18,19 @@ Already have an account? <a href='/login'>Login here...</a>
     {{ csrf_field() }}
 
     <label for='name'>Name</label>
-    <input id='name' type='text' name='name' value='{{ old('name') }}' autofocus>
+    <input dusk='name-input' id='name' type='text' name='name' value='{{ old('name') }}' autofocus>
 
     <label for='email'>E-Mail Address</label>
-    <input id='email' type='email' name='email' value='{{ old('email') }}'>
+    <input dusk='email-input' id='email' type='email' name='email' value='{{ old('email') }}'>
 
     <label for='password'>Password (min: 8)</label>
-    <input id='password' type='password' name='password'>
+    <input dusk='password-input' id='password' type='password' name='password'>
 
     <label for='password-confirm'>Confirm Password</label>
-    <input id='password-confirm' type='password' name='password_confirmation'>
+    <input dusk='confirm-password-input' id='password-confirm' type='password' name='password_confirmation'>
 
     <br>
 
-    <button type='submit' class='btn btn-primary'>Register</button>
+    <button dusk='register-button' type='submit' class='btn btn-primary'>Register</button>
 </form>
 @endsection
