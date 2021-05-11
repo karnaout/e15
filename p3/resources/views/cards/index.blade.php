@@ -23,16 +23,7 @@ No cards have been added yet
         <div class="card-body">
             <p class="card-title text-primary">{{ $card->answer }}</p>
             <p class="text-dark">{{ $card->question }}</p>
-
-            {{-- @if(count( $card['categories'] ) != 0 )
-                <p class="categories text-dark">
-                @foreach($card['categories'] as $category)
-                <span class="mr-1">{{ $category }}</span>
-                @endforeach
-                </p>
-            @endif --}}
-
-            <a href="/cards/{{ $card->slug }}" class="btn btn-primary">Edit card</a>
+            <a href="/cards/{{ $card->slug }}" class="btn btn-primary">Manage card</a>
         </div>
     </div>
 @endforeach

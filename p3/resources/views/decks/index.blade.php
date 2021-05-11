@@ -22,7 +22,7 @@ No decks have been added yet
             <p class="card-title text-primary">{{ $deck->name }}</p>
             <p class="text-dark">{{ $deck->description }}</p>
 
-            <a href="/decks/{{ $deck->slug }}" class="btn btn-primary">Edit deck</a>
+            <a href="/decks/{{ $deck->slug }}" class="btn btn-primary">Manage deck</a>
         </div>
     </div>
 @endforeach

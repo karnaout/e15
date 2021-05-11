@@ -13,20 +13,24 @@ Route::get('/404', [PageController::class, 'notFound']);
 
 /******  Decks ********/
 Route::get('/decks', [DeckController::class, 'index']);
+# create
 Route::get('/decks/create', [DeckController::class, 'create']);
 Route::post('/decks', [DeckController::class, 'store']);
+# view
 Route::get('/decks/{slug}', [DeckController::class, 'show']);
-
-// Decks - Update
+# update
 Route::get('/decks/{slug}/edit', [DeckController::class, 'edit']);
 Route::put('/decks/{slug}', [DeckController::class, 'update']);
 
 
 /******  Cards ********/
 Route::get('/cards', [CardController::class, 'index']);
+# create
 Route::get('/cards/create', [CardController::class, 'create']);
 Route::post('/cards', [CardController::class, 'store']);
+# view
 Route::get('/cards/{slug}', [CardController::class, 'show']);
+# update
 Route::get('/cards/{slug}/edit', [CardController::class, 'edit']);
 Route::put('/cards/{slug}', [CardController::class, 'update']);
 
