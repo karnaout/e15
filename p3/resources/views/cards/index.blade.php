@@ -9,7 +9,7 @@ Cards - FlashCards
 @endsection
 
 @section('content')
-<h1>Cards</h1>
+<h1 dusk='cards'>Cards</h1>
 
 @if( $cards->count() == 0 )
 No cards have been added yet

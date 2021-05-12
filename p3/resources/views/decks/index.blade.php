@@ -9,7 +9,7 @@ Decks - FlashCards
 
 @section('content')
 
-<h1>Decks</h1>
+<h1 dusk='decks'>Decks</h1>
 @if( $decks->count() == 0 )
 No decks have been added yet
 
