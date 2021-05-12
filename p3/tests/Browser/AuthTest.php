@@ -12,7 +12,6 @@ class AuthTest extends DuskTestCase
     /**
      * A Dusk test for registering a new user.
      *
-     * @return void
      */
     public function testRegistration()
     {
@@ -29,5 +28,50 @@ class AuthTest extends DuskTestCase
         });
     }
 
+    /**
+     * Test failed registration
+     *
+     */
+    public function testFailedRegistration()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->logout()
+                    ->visit('/register')
+                    ->assertVisible('@register-heading')
+                    ->click('@register-button')
+                    ->assertVisible('ul.alert');
+        });
+    }
 
+    /**
+     * Test login page
+     */
+    public function testLogin()
+    {
+        $this->browse(function (Browser $browser) {
+
+            $browser->logout()
+                    ->visit('/login')
+                    ->assertVisible('@login')
+                    ->type('@email-input', 'jill@harvard.edu' )
+                    ->type('@password-input', 'asdfasdf')
+                    ->click('@login-button')
+                    ->assertVisible('@welcome-heading');
+        });
+    }
+
+    /**
+     * Test failed log in
+     *
+     */
+    public function testFailedLogin()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->logout()
+                    ->visit('/login')
+                    ->assertVisible('@login')
+                    ->click('@login-button')
+                    ->assertVisible('ul.alert');
+        });
+    }
 }
