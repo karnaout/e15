@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DeckController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\StudyController;
+use App\Http\Controllers\study\GuessPropositionController;
 
 /******  Pages ********/
 Route::get('/', [PageController::class, 'index']);
@@ -43,3 +44,6 @@ Route::get('/memorize-cards', [StudyController::class, 'index']);
 
 // Trivia
 Route::get('/trivia', [StudyController::class, 'index']);
+
+// Guess Proposition
+Route::get('/guess-proposition', [GuessPropositionController::class, 'index']);
